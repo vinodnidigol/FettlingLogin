@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+   
+        <title>Billing</title>
+        <link rel="stylesheet" href="<c:url value="/security/src/main/resources/static/myCSS.css" />" />
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" >
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+      <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+    </head>
+    <body>
+    
+    <ul>
+    <a href=""><h4>Company Name...</h4></a>
+    <h1>Welcome!</h1>
+ <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    
+     <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </ul>
+
+        <li>outword<a th:href="@{/hello}">here</a> to see a greeting.</li>
+         <li>inword <a th:href="@{/inword}">here</a> to see a greeting.</li>
+         <li>po updater<a th:href="@{/getall}">here</a> to see a data.</li>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+   <head>
+   <title>Fettling Park</title>
+    <link href="myCSS.css" rel="stylesheet" type="text/css">
+  
+   </head>
+   <body>
+   
+   <h3 align="center">In-word</h3>
+    <table align="left">
+                <tr>
+                <b>
+                    <h3>[[${#httpServletRequest.remoteUser}]]</h3>
+             
+             </b>  
+              <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+              </tr>
+            </table>
+            
+           
+            <hr/>
+   <hr/>
+  <!--   <form id="inwordinput" modelAttribute="inword" action="getinwords " method="post">  --> 
+                 <form th:action="@{/getinwords}" method="post">
+              <div><label> KFIL No.: <input type="text" name="kfilno"/> </label></div>
+             <div><label> Date: <input type="text" name="indate"/> </label></div>
+             <div><label>Description of Goods : <input type="text" name="descname"/> </label></div>
+            <div><label> QTY: <input type="number" name="qty"/> </label></div>
+             <div><label> Fet : <input type="number" name="infet"/> </label></div>
+            <div><label> RSB: <input type="number" name="inrsb"/> </label></div>
+             <div><label> PNT: <input type="number" name="inpnt"/> </label></div>
+             <div><label> AVG : <input type="number" name="inavg"/> </label></div>
+            <div><label> JOLT: <input type="number" name="injolt"/> </label></div>
+             <div><label> DC/WJ: <input type="number" name="indcwj"/> </label></div>
+             <div><label> R/W : <input type="number" name="inrw"/> </label></div>
+            <div><label> PSB: <input type="number" name="inpsb"/> </label></div>
+             <div><label> Vehicle No.: <input type="text" name="vehcileno"/> </label></div>
+             <div><label> Eway : <input type="text" name="eway"/> </label></div>
+        
+                
+                    <tr>
+                        <td></td>
+                        <td align="left">
+                          <div><input type="submit" value="Save"/></div>
+                        </td>
+                    </tr>
+                   
+            
+            </form>   
+  
+    <br/> <br/>
+  <hr/>
+   <br/> <br/>
+</style>
+           <table>
+           
+           <th>kfilno</th>
+            <th>Date</th>
+               <th>Desc.name</th>
+                  <th>qty</th>
+                     <th>fet</th>
+                        <th>rsb</th>
+                           <th>pnt</th>
+                              <th>avg</th>
+                                 <th>jolt</th>
+                                    <th>Dc/wj</th>
+                                       <th>rw</th>
+                                          <th>psb</th>
+                                             <th>Vehicle No.</th>
+                                                <th>Eway</th>
+         
+         <form th:action="@{/getall}" method="get">  
+            <tr th:each="in : ${getall}" >
+            <td th:text ="${in.kfilno}"></td>
+            <td th:text ="${in.indate}"></td>
+            <td th:text ="${in.descname}"></td>
+            <td th:text ="${in.qty}"></td>
+            <td th:text ="${in.infet}"></td>
+            <td th:text ="${in.inrsb}"></td>
+            <td th:text ="${in.inpnt}"></td>
+            <td th:text ="${in.inavg}"></td>
+            <td th:text ="${in.injolt}"></td>
+            <td th:text ="${in.indcwj}"></td>
+            <td th:text ="${in.inrw}"></td>
+            <td th:text ="${in.inpsb}"></td>
+            <td th:text ="${in.vehcileno}"></td>
+            <td th:text ="${in.eway}"></td>
+            </tr>
+          </form>
+            </tabel>       
+   </body>
+  </html>

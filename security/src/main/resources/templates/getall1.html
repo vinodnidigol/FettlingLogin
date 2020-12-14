@@ -1,0 +1,46 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+   <head>
+   <title>Fettling Park</title>
+</head>
+<body>
+  <table>
+           
+           <th>kfilno</th>
+            <th>Date</th>
+               <th>Desc.name</th>
+                  <th>qty</th>
+                     <th>fet</th>
+                        <th>rsb</th>
+                           <th>pnt</th>
+                              <th>avg</th>
+                                 <th>jolt</th>
+                                    <th>Dc/wj</th>
+                                       <th>rw</th>
+                                          <th>psb</th>
+                                             <th>Vehicle No.</th>
+                                                <th>Eway</th>
+           
+            <tr th:each="in : ${getall}" >
+           
+            <td th:text ="${in.kfilno}"></td>
+            <td th:text ="${in.indate}"></td>
+            <td th:text ="${in.descname}"></td>
+            <td th:text ="${in.qty}"></td>
+            <td th:text ="${in.infet}"></td>
+            <td th:text ="${in.inrsb}"></td>
+            <td th:text ="${in.inpnt}"></td>
+            <td th:text ="${in.inavg}"></td>
+            <td th:text ="${in.injolt}"></td>
+            <td th:text ="${in.indcwj}"></td>
+            <td th:text ="${in.inrw}"></td>
+            <td th:text ="${in.inpsb}"></td>
+            <td th:text ="${in.vehcileno}"></td>
+            <td th:text ="${in.eway}"></td>
+            </tr>
+          
+            </tabel>       
+</body>
+</html>
